@@ -1,0 +1,24 @@
+{
+  "name": "api",
+  "version": "1.0.0",
+  "description": "",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/pauloupgrad/projetos-javascript.git"
+  },
+  "keywords": [],
+  "author": "Paulo Feltz Pinheiro",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/pauloupgrad/projetos-javascript/issues"
+  },
+  "homepage": "https://github.com/pauloupgrad/projetos-javascript#readme",
+  "dependencies": {
+    "express": "4.16.4"
+  }
+}
