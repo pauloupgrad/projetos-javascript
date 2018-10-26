@@ -3,20 +3,46 @@ const port = 8081;
 
 
 const server = express();
-const COLLABS = [
+
+const logado = true;
+
+const COLLABS = [     
+    {    
+        nome: "paulo",
+        qtd: 400      
+    },
     {
-    "id1": {
-        "nome": "paulo",
-        "idade": 51
-      }
-    }
+        nome: "Amanda",
+        gtd: 300
+    },
+    {
+        nome: "Bruno",
+        gtd: 170
+    }    
 ];
-server.get('/', (resq, resp) => {
-    resp.send('<h1>Home</h1>');
+
+server.use((req, res, next) => {
+    if (logado){
+        next();
+    }else{
+        res.send('<h2> Você não esta logado no sistema!</h2>');
+    }
 });
 
-server.get('/sobre', (resq, resp) => {
-    resp.send('<h1>Quem sou</h1>');
+server.get('/', (req, res) => {
+    res.send('<h1>Home</h1>');
+});
+
+server.get('/collabs', (req, res) => {
+    res.send(COLLABS);
+});
+
+server.get('/sobre', (req, res) => {
+    res.send('<h1>Quem sou</h1>');
+});
+
+server.use((req, res)=>{
+    res.send(`<h2>Está rota ${req.url} não existe!</h2>`);
 });
 
 
