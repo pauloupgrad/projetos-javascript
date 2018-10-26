@@ -3,7 +3,14 @@ const port = 8081;
 
 
 const server = express();
-
+const COLLABS = [
+    {
+    "id1": {
+        "nome": "paulo",
+        "idade": 51
+      }
+    }
+];
 server.get('/', (resq, resp) => {
     resp.send('<h1>Home</h1>');
 });
